@@ -31,7 +31,7 @@
    / \   ___  ___(_|_) |_   _|_ _| |__ | | ___
   / _ \ / __|/ __| | |   | |/ _` | '_ \| |/ _ \
  / ___ \\__ \ (__| | |   | | (_| | |_) | |  __/
-/_/   \_\___/\___|_|_|   |_|","_\_,_|_.__/|_|\___|
+/_/   \_\___/\___|_|_|   |_|\__,_|_.__/|_|\___|
 </pre></a></h1>
           </div>
         </div>
@@ -55,16 +55,16 @@
       <div class="col-12 col-md-10">
         <div class="row">
           <div class="col">
-            <textarea class="form-control fixed-width" rows="5" wrap="off" id="input" onchange="onInputChange()" onkeyup="onInputChange()">Col1	Col2	Col3	Numeric Column
-Value 1	Value 2	123	10.0
-Separate	cols    with a tab or 4 spaces	-2,027.1
+            <textarea class="form-control fixed-width" rows="5" wrap="off" id="input" onchange="onInputChange()" onkeyup="onInputChange()">Col1\tCol2\tCol3\tNumeric Column
+Value 1\tValue 2\t123\t10.0
+Separate\tcols    with a tab or 4 spaces\t-2,027.1
 This is a row with only one cell</textarea>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Redesigned Settings Card Section -->
+    <!-- Redesigned Settings Card Section, labels and selects side by side -->
     <div class="row justify-content-center my-4">
       <div class="col-12 col-md-8 col-lg-6">
         <div class="card shadow-sm">
@@ -73,71 +73,84 @@ This is a row with only one cell</textarea>
           </div>
           <div class="card-body">
             <form>
-              <div class="mb-3">
-                <label for="hdr-style" class="form-label">Header Location</label>
-                <select id="hdr-style" class="form-select" onchange="onInputChange()" onselect="onInputChange()">
-                  <option value="none">None</option>
-                  <option value="top" selected="true">First Row</option>
-                  <option value="ssheet">Spreadsheet</option>
-                </select>
+              <div class="mb-3 row align-items-center">
+                <label for="hdr-style" class="col-sm-4 col-form-label mb-0">Header Location</label>
+                <div class="col-sm-8">
+                  <select id="hdr-style" class="form-select" onchange="onInputChange()" onselect="onInputChange()">
+                    <option value="none">None</option>
+                    <option value="top" selected="true">First Row</option>
+                    <option value="ssheet">Spreadsheet</option>
+                  </select>
+                </div>
               </div>
-              <div class="mb-3">
-                <label for="style" class="form-label">Output Style</label>
-                <select id="style" class="form-select" onchange="onInputChange()">
-                  <option value="mysql">ASCII (mysql style)</option>
-                  <option value="separated">ASCII (separated)</option>
-                  <option value="compact">ASCII (compact)</option>
-                  <option value="gfm">Github Markdown</option>
-                  <option value="reddit">Reddit Markdown</option>
-                  <option value="rstGrid">reStructuredText Grid</option>
-                  <option value="rstSimple">reStructuredText Simple</option>
-                  <option value="jira">Jira</option>
-                  <option value="rounded">ASCII (rounded)</option>
-                  <option value="bubbles">ASCII (bubbles)</option>
-                  <option value="girder">ASCII (girder)</option>
-                  <option value="dots">ASCII (dots)</option>
-                  <option value="unicode">Unicode</option>
-                  <option value="unicode_single_line">Unicode (single line)</option>
-                  <option value="mediawiki">MediaWiki</option>
-                  <option value="html">HTML</option>
-                </select>
+              <div class="mb-3 row align-items-center">
+                <label for="style" class="col-sm-4 col-form-label mb-0">Output Style</label>
+                <div class="col-sm-8">
+                  <select id="style" class="form-select" onchange="onInputChange()">
+                    <option value="mysql">ASCII (mysql style)</option>
+                    <option value="separated">ASCII (separated)</option>
+                    <option value="compact">ASCII (compact)</option>
+                    <option value="gfm">Github Markdown</option>
+                    <option value="reddit">Reddit Markdown</option>
+                    <option value="rstGrid">reStructuredText Grid</option>
+                    <option value="rstSimple">reStructuredText Simple</option>
+                    <option value="jira">Jira</option>
+                    <option value="rounded">ASCII (rounded)</option>
+                    <option value="bubbles">ASCII (bubbles)</option>
+                    <option value="girder">ASCII (girder)</option>
+                    <option value="dots">ASCII (dots)</option>
+                    <option value="unicode">Unicode</option>
+                    <option value="unicode_single_line">Unicode (single line)</option>
+                    <option value="mediawiki">MediaWiki</option>
+                    <option value="html">HTML</option>
+                  </select>
+                </div>
               </div>
-              <div class="mb-3">
-                <label for="commenting" class="form-label">Comment Style</label>
-                <select id="commenting" class="form-select" onchange="onInputChange()">
-                  <option value="none">"" (no comment style applied)</option>
-                  <option value="doubleslant">"// " C++/C#/F#/Java/JavaScript/Rust/Swift</option>
-                  <option value="hash">"# " Perl/PowerShell/Python/R/Ruby</option>
-                  <option value="doubledash">"-- " ada/AppleScript/Haskell/Lua/SQL</option>
-                  <option value="percent">"% " MATLAB </option>
-                  <option value="docblock">" * " Docblock (PHP/Java/JS) </option>
-                  <option value="singlespace">" " (1 space) MediaWiki</option>
-                  <option value="quadspace">" &nbsp;&nbsp;&nbsp;" (4 spaces) reddit</option>
-                  <option value="singlequote">"' " (single quote) VBA</option>
-                  <option value="rem">"REM " BASIC/DOS batch file</option>
-                  <option value="c">"C " Fortran IV </option>
-                  <option value="exclamation">"! " Fortran 90</option>
-                  <option value="slantsplat">"/* ... */ " CSS </option>
-                  <option value="xml">&lt;!-- ... --&gt;" XML</option>
-                  <option value="pipe">"|" Reddit pipe</option>
-                </select>
+              <div class="mb-3 row align-items-center">
+                <label for="commenting" class="col-sm-4 col-form-label mb-0">Comment Style</label>
+                <div class="col-sm-8">
+                  <select id="commenting" class="form-select" onchange="onInputChange()">
+                    <option value="none">"" (no comment style applied)</option>
+                    <option value="doubleslant">"// " C++/C#/F#/Java/JavaScript/Rust/Swift</option>
+                    <option value="hash">"# " Perl/PowerShell/Python/R/Ruby</option>
+                    <option value="doubledash">"-- " ada/AppleScript/Haskell/Lua/SQL</option>
+                    <option value="percent">"% " MATLAB </option>
+                    <option value="docblock">" * " Docblock (PHP/Java/JS) </option>
+                    <option value="singlespace">" " (1 space) MediaWiki</option>
+                    <option value="quadspace">" &nbsp;&nbsp;&nbsp;" (4 spaces) reddit</option>
+                    <option value="singlequote">"' " (single quote) VBA</option>
+                    <option value="rem">"REM " BASIC/DOS batch file</option>
+                    <option value="c">"C " Fortran IV </option>
+                    <option value="exclamation">"! " Fortran 90</option>
+                    <option value="slantsplat">"/* ... */ " CSS </option>
+                    <option value="xml">&lt;!-- ... --&gt;" XML</option>
+                    <option value="pipe">"|" Reddit pipe</option>
+                  </select>
+                </div>
               </div>
-              <div class="mb-3 form-check form-switch">
-                <input id="auto-format" type="checkbox" class="form-check-input" checked onchange="onInputChange()">
-                <label for="auto-format" class="form-check-label">Auto-Format</label>
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-8">
+                  <div class="form-check form-switch">
+                    <input id="auto-format" type="checkbox" class="form-check-input" checked onchange="onInputChange()">
+                    <label for="auto-format" class="form-check-label">Auto-Format</label>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input id="trim-input" type="checkbox" class="form-check-input" checked onchange="onInputChange()">
+                    <label for="trim-input" class="form-check-label">Trim Input Lines</label>
+                  </div>
+                  <div class="form-check">
+                    <input id="remember-settings" type="checkbox" class="form-check-input" onchange="toggleCookieStorage()">
+                    <label for="remember-settings" class="form-check-label">Remember Settings</label>
+                  </div>
+                </div>
               </div>
-              <div class="mb-3 form-check form-switch">
-                <input id="trim-input" type="checkbox" class="form-check-input" checked onchange="onInputChange()">
-                <label for="trim-input" class="form-check-label">Trim Input Lines</label>
-              </div>
-              <div class="mb-3 form-check">
-                <input id="remember-settings" type="checkbox" class="form-check-input" onchange="toggleCookieStorage()">
-                <label for="remember-settings" class="form-check-label">Remember Settings</label>
-              </div>
-              <div class="mb-3">
-                <label for="separator" class="form-label">Custom Separator</label>
-                <input id="separator" type="text" name="separator" maxlength="1" size="1" class="form-control"
-                  onfocus="this.value = '';onInputChange()" onkeyup="onInputChange()">
+              <div class="mb-3 row align-items-center">
+                <label for="separator" class="col-sm-4 col-form-label mb-0">Custom Separator</label>
+                <div class="col-sm-8">
+                  <input id="separator" type="text" name="separator" maxlength="1" size="1" class="form-control"
+                    onfocus="this.value = '';onInputChange()" onkeyup="onInputChange()">
+                </div>
               </div>
             </form>
           </div>
