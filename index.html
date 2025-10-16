@@ -31,7 +31,8 @@
    / \   ___  ___(_|_) |_   _|_ _| |__ | | ___
   / _ \ / __|/ __| | |   | |/ _` | '_ \| |/ _ \
  / ___ \\__ \ (__| | |   | | (_| | |_) | |  __/
- /_/   \_\___/\___|_|_|   |_|","_.__/_|_|\___|</pre></a></h1>
+/_/   \_\___/\___|_|_|   |_|","_\_,_|_.__/|_|\___|
+</pre></a></h1>
           </div>
         </div>
 
@@ -62,24 +63,26 @@ This is a row with only one cell</textarea>
         </div>
       </div>
     </div>
-    <div class="row text-center">
-      <div class="col-12 col-md-9 offset-md-1 col-lg-8 offset-lg-2">
-        <div class="row">
-          <div class="col-2">
-            <h2 title="Settings" id="settings"><i class="fa fa-gear"></i></h2>
+
+    <!-- Redesigned Settings Card Section -->
+    <div class="row justify-content-center my-4">
+      <div class="col-12 col-md-8 col-lg-6">
+        <div class="card shadow-sm">
+          <div class="card-header">
+            <h5 class="mb-0"><i class="fa fa-gear"></i> Settings</h5>
           </div>
-          <div class="col-6">
-            <div class="row mb-2">
-              <label for="hdr-style" class="form-label" title="Select what should be used as a header">Header Location:
+          <div class="card-body">
+            <form>
+              <div class="mb-3">
+                <label for="hdr-style" class="form-label">Header Location</label>
                 <select id="hdr-style" class="form-select" onchange="onInputChange()" onselect="onInputChange()">
                   <option value="none">None</option>
                   <option value="top" selected="true">First Row</option>
                   <option value="ssheet">Spreadsheet</option>
                 </select>
-              </label>
-            </div>
-            <div class="row mb-2">
-              <label for="style" class="form-label" title="Select the output format of the table">Output Style:
+              </div>
+              <div class="mb-3">
+                <label for="style" class="form-label">Output Style</label>
                 <select id="style" class="form-select" onchange="onInputChange()">
                   <option value="mysql">ASCII (mysql style)</option>
                   <option value="separated">ASCII (separated)</option>
@@ -98,10 +101,9 @@ This is a row with only one cell</textarea>
                   <option value="mediawiki">MediaWiki</option>
                   <option value="html">HTML</option>
                 </select>
-              </label>
-            </div>
-            <div class="row mb-2">
-              <label for="commenting" class="form-label" title="Select a comment style to place to the left of the table">Comment Style:
+              </div>
+              <div class="mb-3">
+                <label for="commenting" class="form-label">Comment Style</label>
                 <select id="commenting" class="form-select" onchange="onInputChange()">
                   <option value="none">"" (no comment style applied)</option>
                   <option value="doubleslant">"// " C++/C#/F#/Java/JavaScript/Rust/Swift</option>
@@ -119,28 +121,30 @@ This is a row with only one cell</textarea>
                   <option value="xml">&lt;!-- ... --&gt;" XML</option>
                   <option value="pipe">"|" Reddit pipe</option>
                 </select>
-              </label>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="row mb-2">
-              <label for="auto-format" class="form-label" title="Center the headers and right-align numbers in the output table">Auto-Format:
-                <input id="auto-format" checked="true" type="checkbox" title="Center the headers and right-align numbers in the output table" onchange="onInputChange()"></label>
-              <label for="trim-input" class="form-label" title="Trim the input lines before parsing">Trim Input Lines:
-                <input id="trim-input" checked="true" type="checkbox" title="Trim the input lines before parsing" onchange="onInputChange()"></label>
-            </div>
-            <div class="row mb-2">
-              <label for="remember-settings" class="form-label" title="Remember all settings and input in browser cookies">Remember Settings:
-                <input id="remember-settings" type="checkbox" title="Remember all settings and input in browser cookies" onchange="toggleCookieStorage()"></label>
-            </div>
-            <div class="row mb-2">
-              <label for="separator" class="form-label" title="Identify character for custom separator, default is the tab character">Custom Separator:
-                <input id="separator" type="text" name="separator" maxlength="1" size="1" onfocus="this.value = '';onInputChange()" onkeyup="onInputChange()" /></label>
-            </div>
+              </div>
+              <div class="mb-3 form-check form-switch">
+                <input id="auto-format" type="checkbox" class="form-check-input" checked onchange="onInputChange()">
+                <label for="auto-format" class="form-check-label">Auto-Format</label>
+              </div>
+              <div class="mb-3 form-check form-switch">
+                <input id="trim-input" type="checkbox" class="form-check-input" checked onchange="onInputChange()">
+                <label for="trim-input" class="form-check-label">Trim Input Lines</label>
+              </div>
+              <div class="mb-3 form-check">
+                <input id="remember-settings" type="checkbox" class="form-check-input" onchange="toggleCookieStorage()">
+                <label for="remember-settings" class="form-check-label">Remember Settings</label>
+              </div>
+              <div class="mb-3">
+                <label for="separator" class="form-label">Custom Separator</label>
+                <input id="separator" type="text" name="separator" maxlength="1" size="1" class="form-control"
+                  onfocus="this.value = '';onInputChange()" onkeyup="onInputChange()">
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
+    <!-- End Settings Card Section -->
 
     <div class="row">
       <div class="col-12 col-md-2 text-center">
